@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Awesome Collab Session</title>
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+    <link rel="stylesheet" href="assets/main.css">
+  </head>
+  <body ng-app="app">
+    <h1>Hello</h1>
+    <div class="inbox-chart" ng-controller="appController as settings">
+      <chartist class="ct-chart ct-golden-section" chartist-data="settings.donutData" chartist-chart-type="Pie" chartist-chart-options="settings.params"></chartist>
+    </div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="bower_components/angular-chartist.js/dist/angular-chartist.js"></script>
+
+    <script src="public/app.js">
+
+    </script>
+  </body>
+</html>
