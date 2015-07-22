@@ -18,24 +18,9 @@
 		<h1>{{ appHeader }}</h1>
 		<p class="lead">This is a scaffolded page, checking if all the components are in place.</p>
 
-		<div class="ct-chart" style="min-width: 450px; min-height: 400px;"></div>
-
-		<script>
-			var data = {
-			  labels: ['Clicked', 'Opened', 'Failed', 'Unsubscribed'],
-			  series: [1609, 3714, 1361, 742]
-			};
-
-			var options = {
-			  donut: true,
-			  donutWidth: 25,
-			  labelInterpolationFnc: function(value) {
-				return value[0]
-			  }
-			};
-
-			new Chartist.Pie('.ct-chart', data, options);
-		</script>	
-
+		<div ng-controller="chartistController">
+			<div class="ct-chart" style="min-width: 450px; min-height: 400px;" acs-chartist="data"></div>
+		</div>
+		
 	</body>
 </html>
