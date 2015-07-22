@@ -1,39 +1,41 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Awesome Code Session</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/chartist.min.css" rel="stylesheet">
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script src="js/chartist.min.js"></script>
-    <script src="js/app/app.js"></script>
-  </head>
-  <body class="container" ng-cloak ng-app="awesomeCodeSessionApp">
-    
-	<h1>{{ appHeader }}</h1>
-	<p class="lead">This is a scaffolded page, checking if all the components are in place.</p>
-	
-	<div class="ct-chart" style="min-width: 450px; min-height: 400px;"></div>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Awesome Code Session</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/chartist.min.css" rel="stylesheet">
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/chartist.min.js"></script>
+		<script src="js/app/app.js"></script>
+	</head>
+	<body class="container" ng-cloak ng-app="awesomeCodeSessionApp">
 
-	<script>
-	// Just the example from chartist:
-	var data = {
-	  series: [5, 3, 4]
-	};
+		<h1>{{ appHeader }}</h1>
+		<p class="lead">This is a scaffolded page, checking if all the components are in place.</p>
 
-	var sum = function(a, b) { return a + b };
+		<div class="ct-chart" style="min-width: 450px; min-height: 400px;"></div>
 
-	new Chartist.Pie('.ct-chart', data, {
-	  labelInterpolationFnc: function(value) {
-		return Math.round(value / data.series.reduce(sum) * 100) + '%';
-	  }
-	});
-	</script>	
-	
-  </body>
+		<script>
+			var data = {
+			  labels: ['Clicked', 'Opened', 'Failed', 'Unsubscribed'],
+			  series: [1609, 3714, 1361, 742]
+			};
+
+			var options = {
+			  donut: true,
+			  donutWidth: 25,
+			  labelInterpolationFnc: function(value) {
+				return value[0]
+			  }
+			};
+
+			new Chartist.Pie('.ct-chart', data, options);
+		</script>	
+
+	</body>
 </html>
